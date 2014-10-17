@@ -1,0 +1,39 @@
+##### BASIC #####
+MODE = regularization # Do a unconstrained force reconstruction
+
+##### MATERIAL MODEL #####
+BEAMS = 300 	# Number of beams per tetrahedron
+K_0 = 2000 		# Bulk modulus of the material in Pa
+D_0 = 0.00032 	# Buckling coefficient
+L_S = 0.0075 	# Onset of strain stiffening
+D_S = 0.0333 	# Strain stiffening coefficient
+
+##### DRIFT CORRECTION #####
+DRIFTCORRECTION = 1		# Do a driftcorrection
+DRIFT_STEP = 2.0e-6		# Initial stepwidth with which the optimal drift value is searched
+DRIFT_RANGE = 30.0e-6	# Range of drift values which are tested initially
+ALLIGNSTACKS = 1		# After the global drift correction do also a z-dependend drift correction
+
+##### DISPLACEMENT RECONSCTRUCTION #####
+FIBERPATTERNMATCHING = 1	# Reconstruct the displacement field
+SUBPIXEL = 0.0005			# Precision parameter of the matching in voxels
+VB_MINMATCH = 0.7			# Only sections which are matched with a higher cross-correlation than this value are considered valid
+VB_SX = 12					# Size of matched sections in X-direction in voxels
+VB_SY = 12					# Size of matched sections in Y-direction in voxels
+VB_SZ = 12					# Size of matched sections in Z-direction in voxels
+
+##### FINITE ELEMENT MESH #####
+BOXMESH = 1 		# Dont load a mesh but build one
+BM_GRAIN = 7.5e-6	# Grid constant of the regular cubid finite element mesh
+BM_N = 54			# Number of nodes in all dimensions (x,y and z)
+BM_MULOUT = 1.2		# Stretch the outer elements the center by this factor
+BM_RIN = 160e-6		# Strecht only elements that farther away than this value
+
+##### FORCE RECONSTRUCTION #####
+ALPHA = 3.0e9			# Regularization parameter
+REG_ITERATIONS = 50		# Maximal number of interations
+REG_CONV_CRIT = 0.01	# The algorithm stops if the standard deviations of L in the last 6 iterations falls below this value
+REG_SOLVER_STEP = 0.33	# Newton step multiplier
+
+##### TRACTION ANALYSIS #####
+FM_RMAX = 100e-6		# Only forces that lie within this range are considered for the analysis

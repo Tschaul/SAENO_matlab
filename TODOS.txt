@@ -1,0 +1,10 @@
+Next Version
+# Multigrid entfernen
+# namespacing for parameters
+
+Maybe
+# uselaplace entfernen
+# Dateinamen devariabilisieren
+
+Dreamland
+# consistency checks for every module

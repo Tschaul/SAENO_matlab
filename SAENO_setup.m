@@ -4,7 +4,7 @@ dirh=dirh(1:end-12);
 try
     load([dirh '/setup.mat']);
 catch
-    binary=[dirn '/bin/SAENO.exe'];
+    binary=[dirh '/bin/SAENO.exe'];
     defaultprocs=1;
     startflags='/low';
     save([dirh '/setup.mat'],'binary','defaultprocs','startflags');

@@ -1,8 +1,14 @@
 
 dirh=mfilename('fullpath');
 dirh=dirh(1:end-12);
-
-load([dirh '/setup.mat']);
+try
+    load([dirh '/setup.mat']);
+catch
+    binary=[dirn '/bin/SAENO.exe'];
+    defaultprocs=1;
+    startflags='/low';
+    save([dirh '/setup.mat'],'binary','defaultprocs','startflags');
+end
 
 prompt = {'Full path to binary:','Default number of processes:','Flags for start command'};
 dlg_title = 'Input';
